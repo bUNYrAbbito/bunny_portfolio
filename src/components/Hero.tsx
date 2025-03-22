@@ -117,7 +117,7 @@ const Hero = () => {
               style={{ animationDelay: '200ms' }}
             >
               Hi, I'm <span className="text-gradient relative">
-                Prasant Singh
+                Prashant Singh
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 animate-width-expand"></span>
               </span>
             </h1>
