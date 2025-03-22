@@ -12,25 +12,25 @@ type EducationItem = {
 
 const educationData: EducationItem[] = [
   {
-    degree: "B.Tech in Computer Science",
-    institution: "Indian Institute of Technology",
-    location: "Mumbai, India",
-    period: "2018 - 2022",
-    description: "Graduated with honors, focusing on software engineering, algorithms, and data structures. Participated in coding competitions and developed multiple web applications."
+    degree: "Bachelor of Technology CSE (Artificial Intelligence)",
+    institution: "Noida Institute of Engineering and Technology",
+    location: "Greater Noida",
+    period: "November 2022 – Present",
+    description: "Pursuing B.Tech in Computer Science with specialization in Artificial Intelligence, focusing on advanced technologies and software development methodologies."
   },
   {
-    degree: "M.Tech in Artificial Intelligence",
-    institution: "Delhi Technological University",
-    location: "Delhi, India",
-    period: "2022 - 2024",
-    description: "Specialized in machine learning, neural networks, and computer vision with a focus on implementing AI solutions for real-world problems."
+    degree: "Diploma In Engineering (Electrical Engineering)",
+    institution: "Institute of Technology and Management",
+    location: "Aligarh",
+    period: "August 2018 – August 2021",
+    description: "Completed diploma with 76% marks, gaining foundational knowledge in engineering principles and technical skills."
   },
   {
-    degree: "Advanced Web Development Certification",
-    institution: "Udacity",
-    location: "Online",
-    period: "2019",
-    description: "Completed an intensive program covering modern JavaScript frameworks, responsive design, and backend integration."
+    degree: "High School (CBSE)",
+    institution: "Gagan Public School",
+    location: "Aligarh",
+    period: "March 2016 – August 2017",
+    description: "Completed high school education with 70% marks, establishing a strong academic foundation."
   },
 ];
 
@@ -66,7 +66,7 @@ const Education = () => {
             Academic <span className="text-gradient">Journey</span>
           </h3>
           <p className="max-w-2xl mx-auto text-foreground/70 reveal delay-200">
-            My educational background has provided me with a strong foundation in computer science and continuous learning.
+            My educational background has provided me with a strong foundation in technology and engineering.
           </p>
         </div>
         

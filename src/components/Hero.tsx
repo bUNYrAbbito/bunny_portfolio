@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { ButtonHover } from "./ui/button-hover";
 
 const Hero = () => {
@@ -33,6 +33,20 @@ const Hero = () => {
     }
   };
 
+  const handleContactClick = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleProjectsClick = () => {
+    const projectsSection = document.querySelector("#projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -55,23 +69,38 @@ const Hero = () => {
               ref={titleRef}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight reveal"
             >
-              Hi, I'm <span className="text-gradient">Prashant Singh</span>
+              Hi, I'm <span className="text-gradient">Prasant Singh</span>
             </h1>
             
             <p className="text-lg text-foreground/80 max-w-xl reveal delay-200">
-              A passionate Full Stack Developer crafting elegant, user-centric web applications with modern technologies and design principles.
+              A fresher with a BTech degree in full stack development, proficient in both front-end and back-end technologies, creating intuitive, high-performance web applications.
             </p>
             
             <div className="flex flex-wrap gap-4 reveal delay-300">
-              <ButtonHover variant="gradient" size="lg">
+              <ButtonHover variant="gradient" size="lg" onClick={handleContactClick}>
                 Get in Touch
               </ButtonHover>
-              <ButtonHover variant="outline" size="lg">
+              <ButtonHover variant="outline" size="lg" onClick={handleProjectsClick}>
                 View Projects
               </ButtonHover>
             </div>
 
-            <div className="flex items-center gap-6 pt-4 reveal delay-400">
+            <div className="flex flex-col gap-3 pt-4 reveal delay-400">
+              <div className="flex items-center gap-2 text-foreground/70">
+                <MapPin size={18} />
+                <span>Aligarh, Uttar Pradesh (202001)</span>
+              </div>
+              <div className="flex items-center gap-2 text-foreground/70">
+                <Phone size={18} />
+                <span>7017043831</span>
+              </div>
+              <div className="flex items-center gap-2 text-foreground/70">
+                <Mail size={18} />
+                <span>Singhbunny116@gmail.com</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6 pt-2 reveal delay-500">
               <a 
                 href="https://github.com" 
                 target="_blank" 
@@ -90,15 +119,6 @@ const Hero = () => {
               >
                 <Linkedin size={20} />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-foreground transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
             </div>
           </div>
         </div>
@@ -111,8 +131,8 @@ const Hero = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] overflow-hidden rounded-full border-4 border-white/20 glass-card animate-fade-in">
                 <img
-                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                  alt="Prashant Singh"
+                  src="/lovable-uploads/eb62906b-0ea1-4daa-bbf6-c7abf26a5bc1.png"
+                  alt="Prasant Singh"
                   className="w-full h-full object-cover"
                 />
               </div>

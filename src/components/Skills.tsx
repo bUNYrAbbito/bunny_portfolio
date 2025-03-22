@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { Code, Database, Globe, Layout, Smartphone, Trophy } from "lucide-react";
+import { Code, Database, Globe, Layout, Smartphone, Trophy, Server, Book, Cloud } from "lucide-react";
 
 type Skill = {
   category: string;
@@ -16,21 +16,21 @@ const skillsData: Skill[] = [
     category: "Frontend Development",
     icon: <Layout className="w-6 h-6" />,
     items: [
-      { name: "HTML5 & CSS3", level: 95 },
-      { name: "JavaScript (ES6+)", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "React.js", level: 90 },
-      { name: "Next.js", level: 85 },
+      { name: "HTML5 & CSS3", level: 90 },
+      { name: "JavaScript (ES6+)", level: 85 },
+      { name: "React.js", level: 80 },
+      { name: "Angular", level: 75 },
+      { name: "Responsive Design", level: 85 },
     ],
   },
   {
     category: "Backend Development",
     icon: <Server className="w-6 h-6" />,
     items: [
-      { name: "Node.js", level: 88 },
-      { name: "Express.js", level: 85 },
-      { name: "Python", level: 80 },
-      { name: "Django", level: 75 },
+      { name: "Node.js", level: 80 },
+      { name: "Express.js", level: 80 },
+      { name: "Python", level: 75 },
+      { name: "RESTful APIs", level: 85 },
       { name: "PHP", level: 70 },
     ],
   },
@@ -40,42 +40,42 @@ const skillsData: Skill[] = [
     items: [
       { name: "MongoDB", level: 85 },
       { name: "MySQL", level: 80 },
-      { name: "PostgreSQL", level: 75 },
-      { name: "Firebase", level: 85 },
-      { name: "Redis", level: 65 },
+      { name: "Firebase", level: 75 },
+      { name: "SQL", level: 80 },
+      { name: "NoSQL", level: 75 },
     ],
   },
   {
     category: "DevOps & Tools",
     icon: <Code className="w-6 h-6" />,
     items: [
-      { name: "Git & GitHub", level: 90 },
-      { name: "Docker", level: 75 },
-      { name: "AWS", level: 70 },
-      { name: "CI/CD", level: 80 },
-      { name: "Webpack", level: 85 },
+      { name: "Git & GitHub", level: 85 },
+      { name: "Microsoft Azure", level: 75 },
+      { name: "CI/CD", level: 70 },
+      { name: "VS Code", level: 90 },
+      { name: "Command Line", level: 80 },
     ],
   },
   {
-    category: "UI/UX Design",
-    icon: <Smartphone className="w-6 h-6" />,
+    category: "Frameworks & Libraries",
+    icon: <Book className="w-6 h-6" />,
     items: [
-      { name: "Figma", level: 85 },
-      { name: "Adobe XD", level: 80 },
-      { name: "Responsive Design", level: 90 },
-      { name: "UI Frameworks", level: 95 },
-      { name: "Design Systems", level: 85 },
+      { name: "MERN Stack", level: 80 },
+      { name: "MEAN Stack", level: 75 },
+      { name: "Bootstrap", level: 85 },
+      { name: "Tailwind CSS", level: 80 },
+      { name: "jQuery", level: 75 },
     ],
   },
   {
     category: "Other Skills",
-    icon: <Trophy className="w-6 h-6" />,
+    icon: <Cloud className="w-6 h-6" />,
     items: [
-      { name: "Problem Solving", level: 95 },
-      { name: "REST API", level: 90 },
-      { name: "GraphQL", level: 80 },
-      { name: "Testing", level: 85 },
-      { name: "Web Security", level: 85 },
+      { name: "Artificial Intelligence", level: 75 },
+      { name: "Web Development", level: 85 },
+      { name: "Problem Solving", level: 85 },
+      { name: "Teamwork", level: 90 },
+      { name: "Communication", level: 85 },
     ],
   },
 ];
@@ -119,7 +119,7 @@ const Skills = () => {
             My <span className="text-gradient">Skills</span>
           </h3>
           <p className="max-w-2xl mx-auto text-foreground/70 reveal delay-200">
-            I've cultivated a diverse skill set over years of hands-on experience, allowing me to build complete, scalable web applications from concept to deployment.
+            I've developed a range of technical skills allowing me to build complete, responsive web applications with modern technologies.
           </p>
         </div>
         
@@ -162,26 +162,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-// Missing Server icon component
-function Server(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
-      <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
-      <line x1="6" x2="6.01" y1="6" y2="6" />
-      <line x1="6" x2="6.01" y1="18" y2="18" />
-    </svg>
-  );
-}

@@ -10,6 +10,9 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
+    // Set page title
+    document.title = "Prasant Singh | Full Stack Developer";
+    
     // Intersection Observer for reveal animations
     const observer = new IntersectionObserver(
       (entries) => {

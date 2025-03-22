@@ -1,73 +1,55 @@
 
 import { useEffect, useState } from "react";
-import { Eye, Github, ExternalLink } from "lucide-react";
+import { Eye, Github, ExternalLink, Code, ShoppingCart } from "lucide-react";
 import { ButtonHover } from "./ui/button-hover";
 
-type ProjectType = "web" | "mobile" | "ai" | "all";
+type ProjectType = "web" | "frontend" | "fullstack" | "all";
 
 type Project = {
   title: string;
   description: string;
   image: string;
   tags: string[];
-  type: ("web" | "mobile" | "ai")[];
+  type: ("web" | "frontend" | "fullstack")[];
   liveUrl: string;
   repoUrl: string;
 };
 
 const projectsData: Project[] = [
   {
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce platform with product management, cart functionality, and payment integration using React, Node.js, and MongoDB.",
+    title: "Avira E-commerce Site",
+    description: "An online marketplace where users can sell their used electronic gadgets like mobile phones, tablets, smartwatches, laptops, and video game consoles to professional buyers.",
     image: "https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
-    type: ["web"],
+    tags: ["React", "MongoDB", "Express", "Node.js", "MERN Stack"],
+    type: ["web", "fullstack"],
     liveUrl: "#",
     repoUrl: "#",
   },
   {
-    title: "Task Management App",
-    description: "A productivity app for managing tasks and projects with real-time collaboration features, built with React, Firebase, and Redux.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["React", "Firebase", "Redux", "Material UI"],
-    type: ["web", "mobile"],
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    title: "AI Image Generator",
-    description: "An AI-powered application that generates images from text descriptions using OpenAI's DALL-E API and Next.js for the frontend.",
-    image: "https://images.unsplash.com/photo-1655720031554-a929595ffad7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
-    tags: ["Next.js", "OpenAI API", "TypeScript", "Tailwind CSS"],
-    type: ["web", "ai"],
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    title: "Fitness Tracking Mobile App",
-    description: "A cross-platform mobile app for tracking workouts, nutrition, and progress with data visualization, built using React Native and Firebase.",
+    title: "Health Challenge Tracker",
+    description: "Frontend development project during internship at The Spark Foundation. A web application built with Angular to track health challenges and fitness goals.",
     image: "https://images.unsplash.com/photo-1579722037781-2164322efc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-    tags: ["React Native", "Firebase", "Redux", "Chart.js"],
-    type: ["mobile"],
+    tags: ["Angular", "TypeScript", "CSS", "HTML", "Frontend"],
+    type: ["web", "frontend"],
     liveUrl: "#",
     repoUrl: "#",
   },
   {
-    title: "Social Media Dashboard",
-    description: "A comprehensive dashboard for social media analytics with customizable widgets and real-time data visualization.",
+    title: "BasketballPlayerCard Component",
+    description: "A robust React component created during internship at The Spark Foundation, showcasing basketball player information in an interactive card format.",
+    image: "https://images.unsplash.com/photo-1518407613690-d9fc990e795f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    tags: ["React", "JavaScript", "CSS", "Frontend", "Component Design"],
+    type: ["web", "frontend"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    title: "Personal Portfolio Website",
+    description: "A responsive portfolio website built with modern web technologies to showcase my projects, skills, and professional information.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80",
-    tags: ["Vue.js", "D3.js", "Node.js", "Express", "MongoDB"],
-    type: ["web"],
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    title: "ML-Powered Chatbot",
-    description: "An intelligent chatbot with natural language processing capabilities for customer support, built with Python, TensorFlow, and React.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["Python", "TensorFlow", "React", "Flask", "NLP"],
-    type: ["web", "ai"],
-    liveUrl: "#",
+    tags: ["React", "Tailwind CSS", "Responsive Design", "Animation", "Frontend"],
+    type: ["web", "frontend"],
+    liveUrl: "https://prashant-singh.onrender.com/",
     repoUrl: "#",
   },
 ];
@@ -123,7 +105,7 @@ const Projects = () => {
         
         {/* Project Type Filter */}
         <div className="flex justify-center flex-wrap gap-3 mb-12 reveal delay-300">
-          {(["all", "web", "mobile", "ai"] as const).map((type) => (
+          {(["all", "frontend", "fullstack", "web"] as const).map((type) => (
             <button
               key={type}
               onClick={() => setSelectedType(type)}
@@ -133,7 +115,7 @@ const Projects = () => {
                   : "bg-secondary/70 text-foreground/70 hover:bg-secondary"
               }`}
             >
-              {type === "all" ? "All Projects" : type === "ai" ? "AI" : `${type.charAt(0).toUpperCase() + type.slice(1)} Apps`}
+              {type === "all" ? "All Projects" : `${type.charAt(0).toUpperCase() + type.slice(1)} Projects`}
             </button>
           ))}
         </div>
@@ -212,8 +194,9 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-12 reveal delay-400">
-          <ButtonHover variant="outline" size="lg">
-            View All Projects
+          <ButtonHover variant="outline" size="lg" as="a" href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Github className="mr-2 h-4 w-4" />
+            View All Projects on GitHub
           </ButtonHover>
         </div>
       </div>
