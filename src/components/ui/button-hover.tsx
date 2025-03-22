@@ -35,19 +35,23 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  href?: string;
 }
 
 const ButtonHover = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
+  ({ className, variant, size, href, ...props }, ref) => {
+    const Comp = href ? "a" : "button";
+    
     return (
-      <button
+      <Comp
         className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
+        ref={Comp === "button" ? ref : undefined}
+        href={href}
         {...props}
       >
         {props.children}
         <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
-      </button>
+      </Comp>
     );
   }
 );
