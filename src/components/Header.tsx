@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { ButtonHover } from "./ui/button-hover";
@@ -57,9 +56,15 @@ const Header = () => {
           <a href="#contact" className="text-sm font-medium link-underline">
             Contact
           </a>
-          <ButtonHover variant="gradient" size="sm">
-            Resume
-          </ButtonHover>
+          <a 
+            href="https://drive.usercontent.google.com/u/0/uc?id=1m35yaoFqCwLbfdl04EiCrFG7KZh-PbaN&export=download"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ButtonHover variant="gradient" size="sm">
+              Resume
+            </ButtonHover>
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -115,9 +120,16 @@ const Header = () => {
           >
             Contact
           </a>
-          <ButtonHover variant="gradient" size="lg" className="w-full">
-            Resume
-          </ButtonHover>
+          <a 
+            href="https://drive.usercontent.google.com/u/0/uc?id=1m35yaoFqCwLbfdl04EiCrFG7KZh-PbaN&export=download"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+          >
+            <ButtonHover variant="gradient" size="lg" className="w-full">
+              Resume
+            </ButtonHover>
+          </a>
         </nav>
       </div>
     </header>

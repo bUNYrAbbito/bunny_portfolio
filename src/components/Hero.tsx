@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { ButtonHover } from "./ui/button-hover";
@@ -82,7 +81,7 @@ const Hero = () => {
     >
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-background to-background opacity-90"></div>
-        <div className="absolute top-20 right-0 w-3/4 h-3/4 bg-blue-100/30 dark:bg-blue-900/10 rounded-full blur-3xl animate-pulse-subtle"></div>
+        <div className="absolute top-20 right-0 w-3/4 h-3/4 bg-indigo-100/30 dark:bg-indigo-900/10 rounded-full blur-3xl animate-pulse-subtle"></div>
         <div className="absolute bottom-0 left-20 w-3/4 h-1/2 bg-purple-100/20 dark:bg-purple-900/10 rounded-full blur-3xl animate-pulse-subtle" style={{ animationDuration: '7s' }}></div>
         
         {/* Floating particles */}
@@ -90,7 +89,7 @@ const Hero = () => {
           {Array.from({ length: 20 }).map((_, i) => (
             <div 
               key={i}
-              className="absolute bg-blue-400/10 dark:bg-blue-500/10 rounded-full"
+              className="absolute bg-indigo-400/10 dark:bg-indigo-500/10 rounded-full"
               style={{
                 width: `${Math.random() * 20 + 5}px`,
                 height: `${Math.random() * 20 + 5}px`,
@@ -119,7 +118,7 @@ const Hero = () => {
             >
               Hi, I'm <span className="text-gradient relative">
                 Prasant Singh
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 animate-width-expand"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 animate-width-expand"></span>
               </span>
             </h1>
             
@@ -140,21 +139,21 @@ const Hero = () => {
               <div className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors group">
                 <div className="relative overflow-hidden rounded-full p-1 bg-secondary/50 transform group-hover:scale-110 transition-transform">
                   <MapPin size={16} className="relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <span>Aligarh, Uttar Pradesh (202001)</span>
+                <span>Noida, Uttar Pradesh (201301)</span>
               </div>
               <div className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors group">
                 <div className="relative overflow-hidden rounded-full p-1 bg-secondary/50 transform group-hover:scale-110 transition-transform">
                   <Phone size={16} className="relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <span>7017043831</span>
               </div>
               <div className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors group">
                 <div className="relative overflow-hidden rounded-full p-1 bg-secondary/50 transform group-hover:scale-110 transition-transform">
                   <Mail size={16} className="relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <span>Singhbunny116@gmail.com</span>
               </div>
@@ -186,13 +185,13 @@ const Hero = () => {
         <div className="order-1 lg:order-2 flex justify-center">
           <div className="profile-wrapper transition-transform duration-300" style={{ transformStyle: 'preserve-3d' }}>
             <div className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-20 animate-pulse-subtle"></div>
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-300 to-purple-400 opacity-20 animate-pulse-subtle" style={{ animationDelay: '0.3s' }}></div>
-              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-blue-200 to-purple-300 opacity-20 animate-pulse-subtle" style={{ animationDelay: '0.6s' }}></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 opacity-20 animate-pulse-subtle"></div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-indigo-300 to-purple-400 opacity-20 animate-pulse-subtle" style={{ animationDelay: '0.3s' }}></div>
+              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-indigo-200 to-purple-300 opacity-20 animate-pulse-subtle" style={{ animationDelay: '0.6s' }}></div>
               
               {/* Orbiting elements */}
               <div className="absolute inset-0 animate-spin-slow" style={{ animationDuration: '20s' }}>
-                <div className="absolute top-[10%] left-[50%] w-10 h-10 rounded-full bg-blue-400/20 dark:bg-blue-500/20"></div>
+                <div className="absolute top-[10%] left-[50%] w-10 h-10 rounded-full bg-indigo-400/20 dark:bg-indigo-500/20"></div>
                 <div className="absolute bottom-[10%] left-[50%] w-8 h-8 rounded-full bg-purple-400/20 dark:bg-purple-500/20"></div>
               </div>
               <div className="absolute inset-0 animate-spin-slow" style={{ animationDuration: '15s', animationDirection: 'reverse' }}>

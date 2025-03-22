@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Calendar, GraduationCap, MapPin } from "lucide-react";
 
@@ -72,7 +71,7 @@ const Education = () => {
         
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-blue-400 to-purple-500 transform md:translate-x-px"></div>
+          <div className="absolute left-0 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-indigo-400 to-purple-500 transform md:translate-x-px"></div>
           
           {/* Timeline Items */}
           <div className="space-y-16">
@@ -85,7 +84,7 @@ const Education = () => {
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center z-10">
+                <div className="absolute left-0 md:left-1/2 top-0 w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center z-10">
                   <GraduationCap className="text-white w-4 h-4" />
                 </div>
                 

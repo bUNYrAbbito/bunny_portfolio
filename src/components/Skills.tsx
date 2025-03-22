@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { Code, Database, Globe, Layout, Smartphone, Trophy, Server, Book, Cloud } from "lucide-react";
 
@@ -19,7 +18,7 @@ const skillsData: Skill[] = [
       { name: "HTML5 & CSS3", level: 90 },
       { name: "JavaScript (ES6+)", level: 85 },
       { name: "React.js", level: 80 },
-      { name: "Angular", level: 75 },
+      { name: "Next.js", level: 75 },
       { name: "Responsive Design", level: 85 },
     ],
   },
@@ -146,7 +145,7 @@ const Skills = () => {
                     </div>
                     <div className="h-2 bg-secondary rounded-full overflow-hidden">
                       <div 
-                        className="skill-bar-fill h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                        className="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
                         style={{ "--percent": `${skill.level}%` } as React.CSSProperties}
                       ></div>
                     </div>
