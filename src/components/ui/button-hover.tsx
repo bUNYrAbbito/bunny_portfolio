@@ -36,22 +36,38 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   href?: string;
+  target?: string;
+  rel?: string;
 }
 
 const ButtonHover = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, href, ...props }, ref) => {
+  ({ className, variant, size, href, target, rel, ...props }, ref) => {
     const Comp = href ? "a" : "button";
     
+    if (Comp === "a") {
+      return (
+        <a
+          className={cn(buttonVariants({ variant, size, className }))}
+          href={href}
+          target={target}
+          rel={rel}
+          {...props}
+        >
+          {props.children}
+          <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
+        </a>
+      );
+    }
+    
     return (
-      <Comp
+      <button
         className={cn(buttonVariants({ variant, size, className }))}
-        ref={Comp === "button" ? ref : undefined}
-        href={href}
+        ref={ref}
         {...props}
       >
         {props.children}
         <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
-      </Comp>
+      </button>
     );
   }
 );

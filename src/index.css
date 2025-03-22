@@ -126,6 +126,27 @@
   .section-container {
     @apply max-w-7xl mx-auto w-full;
   }
+  
+  .animate-text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-[length:200%_auto] animate-text-flow;
+  }
+  
+  .animate-width-expand {
+    animation: width-expand 0.8s ease-in-out forwards;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 15s linear infinite;
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
 }
 
 /* Smooth scroll behavior */
@@ -215,4 +236,33 @@ html {
 
 .btn-hover:hover:after {
   left: 100%;
+}
+
+/* New animations */
+@keyframes width-expand {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes text-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

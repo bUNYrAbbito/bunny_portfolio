@@ -189,6 +189,33 @@ export default {
 					'100%': {
 						backgroundPosition: '500px 0'
 					}
+				},
+				'text-flow': {
+					'0%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					},
+					'100%': {
+						backgroundPosition: '0% 50%'
+					}
+				},
+				'bounce-subtle': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-5px)'
+					}
+				},
+				'bounce-horizontal': {
+					'0%, 100%': {
+						transform: 'translateX(0)'
+					},
+					'50%': {
+						transform: 'translateX(5px)'
+					}
 				}
 			},
 			animation: {
@@ -205,7 +232,10 @@ export default {
 				'scale-out': 'scale-out 0.6s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
-				'shimmer': 'shimmer 2s infinite linear'
+				'shimmer': 'shimmer 2s infinite linear',
+				'text-flow': 'text-flow 8s ease infinite',
+				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
+				'bounce-horizontal': 'bounce-horizontal 2s ease-in-out infinite'
 			}
 		}
 	},
